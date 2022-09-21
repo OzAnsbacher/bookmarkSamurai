@@ -1,1 +1,7 @@
-<p>{{category|json}}</p> 
+<ul>
+    <li *ngFor="let bookmark of bookmarks">
+        <a href={{bookmark.url}} target="_blank">
+            <p>{{bookmark.name}}</p>
+        </a>
+    </li>
+</ul>

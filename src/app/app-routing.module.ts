@@ -1,3 +1,4 @@
+import { AppBookmarkComponent } from './pages/app-bookmark/app-bookmark.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BookmarkListComponent } from './cmps/bookmark-list/bookmark-list.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,7 @@ const routes: Routes = [
   //   },
   {
     path: '',
-    component: BookmarkListComponent,
+    component: AppBookmarkComponent,
   },
 ];
 

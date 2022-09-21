@@ -5,11 +5,8 @@ import { CommonModule } from '@angular/common';
   declarations: [],
   imports: [CommonModule],
 })
-export class CategoryModule {
-
-}
-export interface CategoryModule {
-  id: string;
-  url: string;
-  name: string;
+export class FilterByModule {}
+export interface FilterByModule {
+  bookmark: string;
+  category: string;
 }

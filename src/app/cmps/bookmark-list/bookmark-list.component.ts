@@ -1,5 +1,6 @@
-import { CategoryModule } from './../../models/category/category.module';
-import { Component, OnInit } from '@angular/core';
+import { CategoriesModule } from './../../models/categories/categories.module';
+import { BookmarkModule } from '../../models/bookmark/bookmark.module';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'bookmark-list',
@@ -9,36 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class BookmarkListComponent implements OnInit {
 
   constructor() { }
-  categories:object={
-    famely:[
-      {
-        id:'a1',
-        url:'google.com',
-        name:'Google',
-      },
-      {
-        id:'a2',
-        url:'youtube.com',
-        name:'youtube',
-      }
-    ],
-    hobby:[
-      {
-        id:'a1',
-        url:'google.com',
-        name:'Google',
-      },
-      {
-        id:'a2',
-        url:'youtube.com',
-        name:'youtube',
-      }
-    ]
-  }
- 
-
+  
+@Input() categories!: CategoriesModule | null;
 
   ngOnInit(): void {
+      
   }
 
 }

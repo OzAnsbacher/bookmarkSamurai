@@ -1,4 +1,4 @@
-import { CategoryModule } from './../../models/category/category.module';
+import { BookmarkModule } from '../../models/bookmark/bookmark.module';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -10,9 +10,11 @@ export class BookmarkPreviewComponent implements OnInit {
 
   constructor() { }
 
-  @Input() category!:CategoryModule|null
+  @Input() bookmarks!:BookmarkModule[]|null
 
   ngOnInit(): void {
+   
+    
   }
 
 }
