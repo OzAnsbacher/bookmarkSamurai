@@ -1,0 +1,36 @@
+.category-container {
+ 
+  width: 390px;
+  border: solid 2px #ededed;
+  
+  .category-title {
+    cursor: pointer;
+    background-color: #5979ab;
+    color: white;
+    padding: 0.4em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h4 {
+      font-size: 1.1em;
+      text-transform: capitalize;
+      font-family: "Lato";
+      font-weight: 500;
+    }
+    svg {
+      transform: rotateZ(90deg);
+      transition: .4s  transform;
+      &.trans-svg{
+        transform: rotateZ(270deg);
+      }
+    }
+  }
+  .ul-container {
+    overflow: hidden;
+  }
+}
+
+.close-li {
+  transform: translateY(-100%);
+}
+

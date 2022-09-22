@@ -1,0 +1,27 @@
+ul {
+  transition: transform 0.4s;
+ 
+  padding: 1em 0.5em;
+  li {
+    display: flex;
+    align-items: center;
+    img {
+      height: 1.4em;
+    }
+    a {
+      margin-left: 0.4em;
+      text-decoration: none;
+      color: black;
+      p {
+        text-transform: capitalize;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+.close-li {
+   
+  transform: translateY(-100%);
+}

@@ -1,0 +1,29 @@
+
+section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+    .btn-title{
+        button{
+            cursor: pointer;
+            background-color: white;
+            border: white;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #74aad8;
+        }
+    }
+    input{
+        background-color: #ebeff2 ;
+        font-size: 1.1em;
+        border: white;
+        padding: .6em .5em;
+        margin-left: 1em;
+        width: 250px;
+        box-shadow: 1px 2px 6px 2px #d1d3d4;
+        &:focus{
+            outline: white;
+        }
+    }
+}

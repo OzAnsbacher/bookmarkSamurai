@@ -18,6 +18,17 @@ export class BookmarkService {
         id: 'a1',
         url: 'https://www.google.com/',
         name: 'Google',
+       
+      },
+      {
+        id: 'a2',
+        url: 'https://youtube.com/',
+        name: 'Youtube',
+      },
+      {
+        id: 'a2',
+        url: 'https://youtube.com/',
+        name: 'Youtube',
       },
       {
         id: 'a2',
@@ -33,8 +44,44 @@ export class BookmarkService {
       },
       {
         id: 'a2',
+        url: 'https://facebook.com/',
+        name: 'facebook',
+      },
+    ],
+    business: [
+      {
+        id: 'a1',
+        url: 'https://github.com/',
+        name: 'github',
+      },
+      {
+        id: 'a2',
         url: 'https://code-oz.web.app/',
         name: 'Oz-Code',
+      },
+    ],
+    news: [
+      {
+        id: 'a1',
+        url: 'https://www.ynet.co.il/',
+        name: 'ynet',
+      },
+      {
+        id: 'a2',
+        url: 'https://www.mako.co.il/',
+        name: 'mako',
+      },
+    ],
+    hotels: [
+      {
+        id: 'a1',
+        url: 'https://www.fattal.co.il/',
+        name: 'fattal',
+      },
+      {
+        id: 'a2',
+        url: 'https://www.isrotel.co.il/',
+        name: 'isrotel',
       },
     ],
   };

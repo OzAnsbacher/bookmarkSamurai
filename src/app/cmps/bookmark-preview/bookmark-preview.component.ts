@@ -11,6 +11,7 @@ export class BookmarkPreviewComponent implements OnInit {
   constructor() { }
 
   @Input() bookmarks!:BookmarkModule[]|null
+  @Input() isClose!:boolean
 
   ngOnInit(): void {
    

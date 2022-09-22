@@ -14,5 +14,13 @@ export class BookmarkCategory implements OnInit {
   // @Output() onRemove = new EventEmitter<string>()
 
   category!: BookmarkModule[]
+  isClose:boolean=false
+  closeList(){
+    console.log(this.isClose);
+    
+    this.isClose=!this.isClose
+    
+  }
+
   ngOnInit(): void {}
 }

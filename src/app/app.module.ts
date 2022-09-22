@@ -8,6 +8,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { BookmarkCategory } from './cmps/bookmark-category/bookmark-category.component';
 import { BookmarkPreviewComponent } from './cmps/bookmark-preview/bookmark-preview.component';
 import { AppBookmarkComponent } from './pages/app-bookmark/app-bookmark.component';
+import { AppHeaderComponent } from './cmps/app-header/app-header.component';
+import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
+import { BarTitleComponent } from './cmps/bar-title/bar-title.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { AppBookmarkComponent } from './pages/app-bookmark/app-bookmark.componen
     BookmarkCategory,
     BookmarkPreviewComponent,
     AppBookmarkComponent,
+    AppHeaderComponent,
+    AppFooterComponent,
+    BarTitleComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
