@@ -3,8 +3,8 @@
         <button>Add Category</button>
         <button>Add Tab</button>
     </div>
-    <div class="input-title">
-        <input type="text" placeholder="Find Category">
-        <input type="text" placeholder="Search Bookmarks">
-    </div>
+    <form class="input-title">
+        <input type="text" name="category" [(ngModel)]="filterBy.category" (ngModelChange)="onChangeFilter()" placeholder="Find Category">
+        <input type="text" name="bookmark" [(ngModel)]="filterBy.bookmark" (ngModelChange)="onChangeFilter()" placeholder="Search Bookmarks">
+    </form>
 </section>

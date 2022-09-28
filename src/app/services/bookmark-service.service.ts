@@ -18,7 +18,6 @@ export class BookmarkService {
         id: 'a1',
         url: 'https://www.google.com/',
         name: 'Google',
-       
       },
       {
         id: 'a2',
@@ -102,9 +101,12 @@ export class BookmarkService {
     const filterBy = this._filterBy$.getValue();
     const bookmarkDB = this._bookmarkDB;
     if (filterBy.category) {
+      var copyBookmarkDB: CategoriesModule = {};
       for (const category in bookmarkDB) {
-        if (category === filterBy.category)
-          this._categories$.next({ category: bookmarkDB[category] });
+        if (category.toLowerCase().includes(filterBy.category.toLowerCase())) {
+          copyBookmarkDB[category] = bookmarkDB[category];
+        }
+        this._categories$.next(copyBookmarkDB);
         //  const bookmarks[category]=bookmarkDB[category]}
       }
     } else if (filterBy.bookmark) {
@@ -119,93 +121,10 @@ export class BookmarkService {
       this._categories$.next(bookmarkDB);
     }
   }
+
+  public setFilterBy(filterBy: FilterByModule) {
+    this._filterBy$.next(filterBy);
+    this.query();
+  }
 }
 
-// export class PetService {
-//   constructor(private http: HttpClient) {}
-
-//   // Mock the database
-//   private _petsDb: Pet[] = [
-//     { _id: 'p123', name: 'Penrose', age: 2, birthDate: new Date('2020-11-12') },
-//     { _id: 'p124', name: 'Bobo', age: 6, birthDate: new Date('2021-8-30') },
-//     { _id: 'p125', name: 'Gertrude', age: 1, birthDate: new Date('2021-11-1') },
-//     {
-//       _id: 'p126',
-//       name: 'Popovich',
-//       age: 62,
-//       birthDate: new Date('1950-3-30'),
-//     },
-//   ];
-
-//   private _pets$ = new BehaviorSubject<Pet[]>([]);
-//   public pets$ = this._pets$.asObservable();
-
-//   private _filterBy$ = new BehaviorSubject<PetFilter>({ term: '' });
-//   public filterBy$ = this._filterBy$.asObservable();
-
-//   public query() {
-//     const filterBy = this._filterBy$.getValue();
-//     const pets = this._petsDb.filter(({ name }) => {
-//       return name.toLowerCase().includes(filterBy.term.toLowerCase());
-//     });
-//     this._pets$.next(pets);
-//   }
-
-//   public shouldAdoptPet() {
-//     return this.http
-//       .get<{ answer: string }>('https://yesno.wtf/api')
-//       .pipe(map((res) => res.answer));
-//   }
-
-//   public getEmptyPet() {
-//     return { name: '', age: 0, birthDate: new Date() };
-//   }
-
-//   public remove(petId: string) {
-//     const pets = this._petsDb;
-//     const petIdx = pets.findIndex((pet) => pet._id === petId);
-//     pets.splice(petIdx, 1);
-//     this._pets$.next(pets);
-//     return of({});
-//   }
-
-//   public getById(petId: string): Observable<Pet | void> {
-//     const pet = this._petsDb.find((pet) => pet._id === petId);
-//     if (pet) return of({ ...pet });
-//     return of();
-//   }
-
-//   public save(pet: Pet) {
-//     return pet._id ? this._edit(pet) : this._add(pet);
-//   }
-
-//   public setFilterBy(filterBy: PetFilter) {
-//     this._filterBy$.next(filterBy);
-//     this.query();
-//   }
-
-//   private _add(pet: Pet) {
-//     pet._id = this._makeId();
-//     this._petsDb.push(pet);
-//     this._pets$.next(this._petsDb);
-//     return of(pet);
-//   }
-
-//   private _edit(pet: Pet) {
-//     const pets = this._petsDb;
-//     const petIdx = pets.findIndex((_pet) => _pet._id === pet._id);
-//     pets.splice(petIdx, 1, pet);
-//     this._pets$.next(pets);
-//     return of(pet);
-//   }
-
-//   private _makeId(length = 5) {
-//     var text = '';
-//     var possible =
-//       'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//     for (var i = 0; i < length; i++) {
-//       text += possible.charAt(Math.floor(Math.random() * possible.length));
-//     }
-//     return text;
-//   }
-// }

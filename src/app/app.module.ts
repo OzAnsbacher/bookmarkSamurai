@@ -11,6 +11,7 @@ import { AppBookmarkComponent } from './pages/app-bookmark/app-bookmark.componen
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
 import { BarTitleComponent } from './cmps/bar-title/bar-title.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { BarTitleComponent } from './cmps/bar-title/bar-title.component';
     AppFooterComponent,
     BarTitleComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
