@@ -23,4 +23,8 @@ export class BookmarkCategory implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  delete(id: string) {
+  
+  }
 }

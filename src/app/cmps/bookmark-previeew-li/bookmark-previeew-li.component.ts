@@ -1,5 +1,6 @@
 import { BookmarkModule } from './../../models/bookmark/bookmark.module';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'bookmark-previeew-li',
@@ -9,19 +10,18 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BookmarkPrevieewLiComponent implements OnInit {
   constructor() {}
   @Input() bookmark!: BookmarkModule | null;
-
+  @Output() id: EventEmitter<any> = new EventEmitter()
   isOptions: boolean = false;
 
   ngOnInit(): void {}
 
   toggleOptions() {
-    console.log(this.isOptions);
-
     this.isOptions = !this.isOptions;
   }
 
   delete() {
     console.log(this.bookmark);
+    if (this.bookmark?.id) this.id.emit(this.bookmark.id);
   }
 
   edit() {

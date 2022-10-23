@@ -1,5 +1,5 @@
 import { BookmarkModule } from '../../models/bookmark/bookmark.module';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'bookmark-preview',
@@ -11,7 +11,7 @@ export class BookmarkPreviewComponent implements OnInit {
 
   @Input() bookmarks!: BookmarkModule[] | null;
   @Input() isClose!: boolean;
-
+  @Output() id: EventEmitter<any> = new EventEmitter();
   isHidden!: boolean;
 
   ngOnInit(): void {}
@@ -26,5 +26,7 @@ export class BookmarkPreviewComponent implements OnInit {
     }
   }
 
-
+  delete(id: string) {
+    this.id.emit(id);
+  }
 }

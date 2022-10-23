@@ -1,5 +1,5 @@
 <ul [ngClass]="isClose ? 'close-li' : '' " [class.isHidden]="isHidden">
     <li *ngFor="let bookmark of bookmarks">
-        <bookmark-previeew-li [bookmark]="bookmark"></bookmark-previeew-li>
+        <bookmark-previeew-li [bookmark]="bookmark" (id)="delete($event)"></bookmark-previeew-li>
     </li>
 </ul>
