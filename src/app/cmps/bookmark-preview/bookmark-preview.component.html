@@ -1,9 +1,5 @@
-<ul [ngClass]="isClose ? 'close-li' : '' ">
-<!-- <ul [class.closeli]="isClose" > -->
+<ul [ngClass]="isClose ? 'close-li' : '' " [class.isHidden]="isHidden">
     <li *ngFor="let bookmark of bookmarks">
-        <img src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url={{bookmark.url}}" alt="">
-        <a href={{bookmark.url}} target="_blank">
-            <p>{{bookmark.name}}</p>
-        </a>
+        <bookmark-previeew-li [bookmark]="bookmark"></bookmark-previeew-li>
     </li>
 </ul>

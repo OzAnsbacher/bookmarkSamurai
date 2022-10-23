@@ -12,6 +12,8 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
 import { BarTitleComponent } from './cmps/bar-title/bar-title.component';
 import { FormsModule } from '@angular/forms';
+import { AddTabComponent } from './cmps/add-tab/add-tab.component';
+import { BookmarkPrevieewLiComponent } from './cmps/bookmark-previeew-li/bookmark-previeew-li.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FormsModule } from '@angular/forms';
     AppHeaderComponent,
     AppFooterComponent,
     BarTitleComponent,
+    AddTabComponent,
+    BookmarkPrevieewLiComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

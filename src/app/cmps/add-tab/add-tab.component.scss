@@ -1,0 +1,71 @@
+@keyframes example {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(4);
+  }
+}
+@keyframes example1 {
+  0% {
+    transform: scale(4);
+    // background-color: rgba(0, 0, 0, 0.281);
+  }
+  100% {
+    transform: scale(1);
+   
+  }
+}
+@keyframes example2 {
+  0% {
+
+    background-color: rgba(0, 0, 0, 0.281);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+   
+  }
+}
+
+.add-form{
+  height: 80px;
+  width: 100px;
+  z-index: 10;
+  animation: example 0.5s forwards;
+  transform: scale(1.5);
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  background-color: rgb(250, 252, 250);
+  border: #ededed 2px solid;
+  // display: flex;
+  // flex-direction: column;
+  // padding: 1px 5px;
+  font-size: 0.3rem;
+  // line-height: 1.2;
+
+  input{
+    background-color: #ebeff2 ;
+    font-size: 1.1em;
+    border: white;
+    padding: .6em .5em;
+    margin-left: 1em;
+    // width: 250px;
+    box-shadow: 1px 2px 6px 2px #d1d3d4;
+    &:focus{
+        outline: white;
+    }
+}
+}
+
+
+
+.dark {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.406);
+  }

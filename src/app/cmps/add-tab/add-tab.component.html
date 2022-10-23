@@ -1,0 +1,14 @@
+<section *ngIf="isOpen" (click)="closeSlow()" class="dark">
+    <div class="add-form">
+        <!-- <div ngIf="isOpen" (click)="closeSlow()" [class.close-light]="isClick" class="dark"> -->
+        <form [class.close-details]="isClick">
+            <input type="text" placeholder="name">
+            <input type="text" placeholder="link">
+
+        </form>
+    </div>
+    <!-- <div v-if="isOpen" class="code-li category">{{ order.title }}</div>
+    <div v-else class="li-preview-conteiner" @click="isOpen = !isOpen"> -->
+
+    <!-- </div> -->
+</section>

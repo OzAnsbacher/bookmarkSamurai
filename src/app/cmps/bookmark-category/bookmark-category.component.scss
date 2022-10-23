@@ -1,7 +1,7 @@
 .category-container {
  
   width: 390px;
-  border: solid 2px #ededed;
+  // border: solid 2px #ededed;
   
   .category-title {
     cursor: pointer;
@@ -26,7 +26,8 @@
     }
   }
   .ul-container {
-    overflow: hidden;
+      overflow: hidden;
+   
   }
 }
 
