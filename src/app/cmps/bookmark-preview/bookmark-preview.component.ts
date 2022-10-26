@@ -12,6 +12,7 @@ export class BookmarkPreviewComponent implements OnInit {
   @Input() bookmarks!: BookmarkModule[] | null;
   @Input() isClose!: boolean;
   @Output() id: EventEmitter<any> = new EventEmitter();
+  @Output() editBookmark: EventEmitter<any> = new EventEmitter();
   isHidden!: boolean;
 
   ngOnInit(): void {}
@@ -28,5 +29,8 @@ export class BookmarkPreviewComponent implements OnInit {
 
   delete(id: string) {
     this.id.emit(id);
+  }
+  edit(editBookmark:BookmarkModule) {
+    this.editBookmark.emit(editBookmark);
   }
 }

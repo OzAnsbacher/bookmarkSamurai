@@ -12,5 +12,6 @@ export interface BookmarkModule {
   id: string;
   url: string;
   name: string;
+  category: string;
   icon?: string;
 }

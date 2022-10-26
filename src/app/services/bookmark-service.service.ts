@@ -18,69 +18,87 @@ export class BookmarkService {
         id: 'a1',
         url: 'https://www.google.com/',
         name: 'Google',
+        category: 'General',
       },
       {
         id: 'a2',
         url: 'https://youtube.com/',
         name: 'Youtube',
+        category: 'General',
       },
       {
-        id: 'a2',
+        id: 'a3',
         url: 'https://youtube.com/',
         name: 'Youtube',
+        category: 'General',
       },
       {
-        id: 'a2',
+        id: 'a4',
         url: 'https://youtube.com/',
         name: 'Youtube',
+        category: 'General',
       },
     ],
     hobby: [
       {
-        id: 'a1',
+        id: 'a5',
         url: 'https://www.linkedin.com/feed/',
         name: 'Linkedin',
+        category: 'hobby',
       },
       {
-        id: 'a2',
+        id: 'a6',
         url: 'https://facebook.com/',
         name: 'facebook',
+        category: 'hobby',
       },
     ],
     business: [
       {
-        id: 'a1',
+        id: 'a7',
         url: 'https://github.com/',
         name: 'github',
+        category: 'business',
       },
       {
-        id: 'a2',
+        id: 'a8',
         url: 'https://code-oz.web.app/',
         name: 'Oz-Code',
+        category: 'business',
+      },
+      {
+        id: 'a14',
+        url: 'https://koshercode.netlify.app/',
+        name: 'Kosher-code',
+        category: 'business',
       },
     ],
     news: [
       {
-        id: 'a1',
+        id: 'a9',
         url: 'https://www.ynet.co.il/',
         name: 'ynet',
+        category: 'news',
       },
       {
-        id: 'a2',
+        id: 'a10',
         url: 'https://www.mako.co.il/',
         name: 'mako',
+        category: 'news',
       },
     ],
     hotels: [
       {
-        id: 'a1',
+        id: 'a11',
         url: 'https://www.fattal.co.il/',
         name: 'fattal',
+        category: 'hotels',
       },
       {
-        id: 'a2',
+        id: 'a12',
         url: 'https://www.isrotel.co.il/',
         name: 'isrotel',
+        category: 'hotels',
       },
     ],
   };
@@ -126,5 +144,20 @@ export class BookmarkService {
     this._filterBy$.next(filterBy);
     this.query();
   }
-}
 
+  public remove(bookmarkId: string) {
+    let bookmarks = this._bookmarkDB;
+    // const petIdx = bookmarks.findIndex(pet => pet._id === bookmarkId)
+    for (const category in bookmarks) {
+      let bookmarkIdx = bookmarks[category].findIndex(({ id }) => {
+        return id === bookmarkId;
+      });
+      if (bookmarkIdx) {
+        bookmarks[category].splice(bookmarkIdx, 1);
+        bookmarkIdx = 0;
+      }
+    }
+    this._categories$.next(bookmarks);
+    return of({});
+  }
+}

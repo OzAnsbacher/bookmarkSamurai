@@ -1,7 +1,6 @@
 import { BookmarkModule } from './../../models/bookmark/bookmark.module';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
-
 @Component({
   selector: 'bookmark-previeew-li',
   templateUrl: './bookmark-previeew-li.component.html',
@@ -10,8 +9,9 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class BookmarkPrevieewLiComponent implements OnInit {
   constructor() {}
   @Input() bookmark!: BookmarkModule | null;
-  @Output() id: EventEmitter<any> = new EventEmitter()
-  isOptions: boolean = false;
+  @Output() id: EventEmitter<any> = new EventEmitter();
+  @Output() editBookmark: EventEmitter<any> = new EventEmitter();
+   isOptions: boolean = false;
 
   ngOnInit(): void {}
 
@@ -20,11 +20,12 @@ export class BookmarkPrevieewLiComponent implements OnInit {
   }
 
   delete() {
-    console.log(this.bookmark);
+    this.isOptions=!this.isOptions
     if (this.bookmark?.id) this.id.emit(this.bookmark.id);
   }
 
   edit() {
-    console.log(this.bookmark);
+    this.isOptions=!this.isOptions
+    if (this.bookmark) this.editBookmark.emit(this.bookmark);
   }
 }

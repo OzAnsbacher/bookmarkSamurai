@@ -1,17 +1,18 @@
 <div class="category-container" *ngIf="categoryVal">
     <div class="category-title" (click)="closeList()">
         <h4>{{categoryName}}</h4>
-        <svg class="aT5-aOt-I-JX " [class.trans-svg]="isClose" version="1.1" id="Layer_1" x="0px" y="0px" width="30px" height="30px"
-            viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" fill="#fff">
+        <svg class="aT5-aOt-I-JX " [class.trans-svg]="isClose" version="1.1" id="Layer_1" x="0px" y="0px" width="30px"
+            height="30px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" fill="#fff">
             <path d="M8.59,16.59L13.17,12L8.59,7.41L10,6l6,6l-6,6L8.59,16.59z"></path>
             <path fill="none" d="M0,0h24v24H0V0z"></path>
         </svg>
     </div>
     <!-- </div> -->
-    <div class="ul-container" >
-    <!-- <div class="ul-container" [class.close-li]="isClose"> -->
+    <div class="ul-container">
+        <!-- <div class="ul-container" [class.close-li]="isClose"> -->
 
-        <bookmark-preview [bookmarks]="categoryVal" [isClose]="isClose" (id)="delete($event)"></bookmark-preview>
+        <bookmark-preview [bookmarks]="categoryVal" [isClose]="isClose" (id)="delete($event)"
+            (editBookmark)="edit($event)"></bookmark-preview>
     </div>
     <!-- <bookmark-preview [bookmarks]="categoryVal" [isClose]="isClose" [class.closeli]="!isClose"></bookmark-preview> -->
 </div>

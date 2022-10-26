@@ -3,7 +3,6 @@ import { FilterByModule } from './../../models/filter-by/filter-by.module';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-
 @Component({
   selector: 'bar-title',
   templateUrl: './bar-title.component.html',
@@ -12,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class BarTitleComponent implements OnInit {
   constructor(private bookmarkService: BookmarkService) {}
 
-  filterBy!: FilterByModule
+  filterBy!: FilterByModule;
   subscription!: Subscription;
 
   ngOnInit(): void {
@@ -22,7 +21,11 @@ export class BarTitleComponent implements OnInit {
   }
 
   onChangeFilter() {
-   
-    this.bookmarkService.setFilterBy(this.filterBy)
+    this.bookmarkService.setFilterBy(this.filterBy);
+  }
+
+  openTab() {
+    window.open('http://localhost:8080/', '_blank',
+    ' titlebar=no, resizable=no, status=no, location=no, menubar=no, width=400px, height=400px, top=50px, left=50px');
   }
 }
