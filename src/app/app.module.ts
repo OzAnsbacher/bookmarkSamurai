@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,7 +30,7 @@ import { BookmarkPrevieewLiComponent } from './cmps/bookmark-previeew-li/bookmar
     AddTabComponent,
     BookmarkPrevieewLiComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, DragDropModule],
   providers: [],
   bootstrap: [AppComponent],
 })

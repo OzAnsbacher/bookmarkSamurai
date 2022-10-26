@@ -1,5 +1,5 @@
-<ul [ngClass]="isClose ? 'close-li' : '' " [class.isHidden]="isHidden">
-    <li *ngFor="let bookmark of bookmarks">
-        <bookmark-previeew-li [bookmark]="bookmark" (id)="delete($event)" (editBookmark)="edit($event)"></bookmark-previeew-li>
+<ul [ngClass]="isClose ? 'close-li' : '' " [class.isHidden]="isHidden" class="example-list" cdkDropList (cdkDropListDropped)="drop($event)">
+    <li *ngFor="let bookmark of bookmarks" class="exampe-box" cdkDrag >
+        <bookmark-previeew-li [bookmark]="bookmark" (id)="delete($event)"  ></bookmark-previeew-li>
     </li>
 </ul>
