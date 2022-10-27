@@ -1,5 +1,6 @@
 .category-container {
-  width: 390px;
+    min-width: 290px;
+  // max-width: 400px;
   // border: solid 2px #ededed;
   .category-title {
     cursor: pointer;

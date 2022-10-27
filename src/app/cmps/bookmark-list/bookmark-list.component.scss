@@ -1,13 +1,13 @@
 .category-list{
-    display: grid;
-    grid-template-columns: auto auto;
-    // display: flex;
-    // flex-wrap: wrap;
+   
+    display: flex;
+    flex-wrap: wrap;
     // flex-direction: column;
-    // justify-content: space-between;
+    justify-content: space-between;
     // grid-column: 3;
 background-color: white;
+gap: 10px;
 }
 .bookmark-category{
- 
+ flex-grow: 1;
 }

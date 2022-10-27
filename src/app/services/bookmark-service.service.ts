@@ -195,6 +195,32 @@ export class BookmarkService {
         category: 'hotels',
       },
     ],
+    Judaism: [
+      {
+        id: 'a36',
+        url: 'https://www.yeshiva.org.il/',
+        name: 'yeshiva',
+        category: 'Judaism',
+      },
+      {
+        id: 'a38',
+        url: 'https://meirtv.com/',
+        name: 'meirtv',
+        category: 'Judaism',
+      },
+      {
+        id: 'a35',
+        url: 'https://harhamor.co.il/',
+        name: 'har hamor',
+        category: 'Judaism',
+      },
+      {
+        id: 'a37',
+        url: 'https://www.dirshu.co.il/',
+        name: 'dirshu',
+        category: 'Judaism',
+      },
+    ],
   };
 
   //creat new BehaviorSubject

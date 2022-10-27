@@ -1,18 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
-//BASIC
+//SETUP
+@import './setup/variables';
+@import './setup/mixins';
+@import './setup/functions';
+@import './setup/dragNdrop';
 
+//BASIC
 @import './basic/base';
 @import './basic/helpers';
 @import './basic/layout';
 @import './basic/fonts';
 
-//SETUP
-
-@import './setup/variables';
-@import './setup/mixins';
-@import './setup/functions';
-@import './setup/dragNdrop';
 
 //VIEWS
 
