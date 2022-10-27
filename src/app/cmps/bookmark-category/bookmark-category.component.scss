@@ -1,8 +1,6 @@
 .category-container {
- 
   width: 390px;
   // border: solid 2px #ededed;
-  
   .category-title {
     cursor: pointer;
     background-color: #5979ab;
@@ -19,19 +17,17 @@
     }
     svg {
       transform: rotateZ(90deg);
-      transition: .4s  transform;
-      &.trans-svg{
+      transition: 0.4s transform;
+      &.trans-svg {
         transform: rotateZ(270deg);
       }
     }
   }
   .ul-container {
-      overflow: hidden;
-   
+    overflow: hidden;
   }
 }
 
 .close-li {
   transform: translateY(-100%);
 }
-

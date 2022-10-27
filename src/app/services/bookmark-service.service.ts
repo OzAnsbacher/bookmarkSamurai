@@ -28,29 +28,41 @@ export class BookmarkService {
       },
       {
         id: 'a3',
-        url: 'https://youtube.com/',
-        name: 'Youtube',
+        url: 'https://www.yahoo.com/',
+        name: 'yahoo',
         category: 'General',
       },
       {
-        id: 'a4',
-        url: 'https://youtube.com/',
-        name: 'Youtube',
+        id: 'a27',
+        url: 'https://www.microsoft.com/he-il/edge?form=MI13F3&OCID=MI13F3',
+        name: 'microsoft-edge',
         category: 'General',
       },
     ],
-    hobby: [
+    'Social media': [
       {
         id: 'a5',
         url: 'https://www.linkedin.com/feed/',
         name: 'Linkedin',
-        category: 'hobby',
+        category: 'Social media',
       },
       {
         id: 'a6',
         url: 'https://facebook.com/',
         name: 'facebook',
-        category: 'hobby',
+        category: 'Social media',
+      },
+      {
+        id: 'a16',
+        url: 'https://www.instagram.com/',
+        name: 'instagram',
+        category: 'Social media',
+      },
+      {
+        id: 'a17',
+        url: 'https://www.tiktok.com/en/',
+        name: 'tiktok',
+        category: 'Social media',
       },
     ],
     business: [
@@ -72,12 +84,82 @@ export class BookmarkService {
         name: 'Kosher-code',
         category: 'business',
       },
+      {
+        id: 'a36',
+        url: 'https://www.microsoft.com/he-il/',
+        name: 'microsoft',
+        category: 'business',
+      },
+    ],
+    Management: [
+      {
+        id: 'a31',
+        url: 'https://monday.com/',
+        name: 'monday',
+        category: 'Management',
+      },
+      {
+        id: 'a32',
+        url: 'https://trello.com/',
+        name: 'trello',
+        category: 'Management',
+      },
+      {
+        id: 'a33',
+        url: 'https://www.bookmarkninja.com/',
+        name: 'bookmark ninja',
+        category: 'Management',
+      },
+    ],
+    hobby: [
+      {
+        id: 'a22',
+        url: 'https://www.tiuli.com/',
+        name: 'tiuli',
+        category: 'hobby',
+      },
+      {
+        id: 'a21',
+        url: 'https://baliletayel.co.il/',
+        name: 'baliletayel',
+        category: 'hobby',
+      },
+      {
+        id: 'a23',
+        url: 'https://www.rzrclub.co.il/',
+        name: 'rzrclub',
+        category: 'hobby',
+      },
     ],
     news: [
       {
         id: 'a9',
         url: 'https://www.ynet.co.il/',
         name: 'ynet',
+        category: 'news',
+      },
+      {
+        id: 'a20',
+        url: 'https://www.now14.co.il/',
+        name: 'now14',
+        category: 'news',
+      },
+      {
+        id: 'a17',
+        url: 'https://www.kipa.co.il/',
+        name: 'kipa',
+        category: 'news',
+      },
+      {
+        id: 'a18',
+        url: 'https://walla.co.il/',
+        name: 'walla',
+        category: 'news',
+      },
+      {
+        id: 'a19',
+        url: 'https://www.foxnews.com/',
+        name: 'foxnews',
         category: 'news',
       },
       {
@@ -95,9 +177,21 @@ export class BookmarkService {
         category: 'hotels',
       },
       {
+        id: 'a29',
+        url: 'https://www.danhotels.co.il/',
+        name: 'dan',
+        category: 'hotels',
+      },
+      {
         id: 'a12',
         url: 'https://www.isrotel.co.il/',
         name: 'isrotel',
+        category: 'hotels',
+      },
+      {
+        id: 'a30',
+        url: 'https://www.rimonimhotels.com/',
+        name: 'rimonim',
         category: 'hotels',
       },
     ],
