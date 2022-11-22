@@ -1,0 +1,21 @@
+<div class="main-layout">
+
+    <h1>Sign up </h1>
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" (change)="conPassword()">
+
+        <label for="username">Username:
+            <input class="required" id="username" type="text" formControlName="username">
+        </label>
+        <label for="password">Password:
+            <input class="required" id="password" type="password" formControlName="password">
+        </label>
+        <label for="check">Confirm password:
+            <input id="check" type="password" formControlName="check">
+        </label>
+        <p *ngIf="!isPassVal">password mismatch</p>
+        <div class="btn">
+
+            <button type="submit" [disabled]="!profileForm.valid">Create Account</button>
+        </div>
+    </form>
+</div>

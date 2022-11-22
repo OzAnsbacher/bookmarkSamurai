@@ -9,8 +9,8 @@ import { BookmarkModule } from '../models/bookmark/bookmark.module';
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  // BASE_URL = '//localhost:3030/api/';
-  BASE_URL = '/api/';
+  BASE_URL = '//localhost:3030/api/';
+  // BASE_URL = '/api/';
 
   public get(endpoint: string, data: object | null) {
     return this.http

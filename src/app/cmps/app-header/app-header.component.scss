@@ -2,29 +2,34 @@ header {
   background-color: #ebeff2;
   padding: 1.3em 0;
   box-shadow: 1px 2px 6px 2px #d1d3d4;
-}
-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  img {
-    height: 40px;
-    width: 40px;
 
-    transform: translateX(19px) rotatez(114deg);
-  }
-  a {
-    text-decoration: none;
-    h1 {
-      font-family: "Baiknya";
-      text-transform: capitalize;
-      color: black;
+  section.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    img {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+
+      transform: translatey(-24px) translateX(-21px) rotatez(114deg);
+     
     }
-  }
+    a {
+      text-decoration: none;
+      h1 {
+        font-family: "Baiknya";
+        text-transform: capitalize;
+        color: black;
+        line-height: 0;
+      }
+    }
 
-  .btn-nav {
-    text-decoration: none;
-    color: #546e7a;
-    margin-left: 10px;
+    .btn-nav {
+      text-decoration: none;
+      color: #546e7a;
+      margin-left: 10px;
+    }
   }
 }
