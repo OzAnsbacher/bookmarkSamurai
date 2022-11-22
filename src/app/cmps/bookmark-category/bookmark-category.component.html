@@ -11,7 +11,7 @@
     <div class="ul-container">
         <!-- <div class="ul-container" [class.close-li]="isClose"> -->
 
-        <bookmark-preview class="bookmark-preview-container" [bookmarks]="categoryVal" [isClose]="isClose" (id)="delete($event)"
+        <bookmark-preview class="bookmark-preview-container" [class.isDisplay]="!isDisplay" [bookmarks]="categoryVal" [isClose]="isClose" (id)="delete($event)"
             (editBookmark)="edit($event)"></bookmark-preview>
     </div>
     <!-- <bookmark-preview [bookmarks]="categoryVal" [isClose]="isClose" [class.closeli]="!isClose"></bookmark-preview> -->

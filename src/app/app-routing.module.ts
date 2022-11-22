@@ -5,13 +5,21 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: HomePageComponent,
-  //   },
   {
     path: '',
+    component: HomePageComponent,
+    },
+  {
+    path: 'bookmark',
     component: AppBookmarkComponent,
+  },
+  {
+    path: 'signup',
+    component: HomePageComponent,
+  },
+  {
+    path: 'login',
+    component: HomePageComponent,
   },
 ];
 

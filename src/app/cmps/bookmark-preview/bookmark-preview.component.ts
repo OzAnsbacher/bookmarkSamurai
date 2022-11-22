@@ -1,6 +1,6 @@
 import { BookmarkModule } from '../../models/bookmark/bookmark.module';
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'bookmark-preview',
@@ -31,11 +31,10 @@ export class BookmarkPreviewComponent implements OnInit {
   delete(id: string) {
     this.id.emit(id);
   }
-  edit(editBookmark:BookmarkModule) {
+  edit(editBookmark: BookmarkModule) {
     this.editBookmark.emit(editBookmark);
   }
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.bookmarks, event.previousIndex, event.currentIndex);
   }
-
 }

@@ -11,7 +11,7 @@ export class BookmarkPrevieewLiComponent implements OnInit {
   @Input() bookmark!: BookmarkModule | null;
   @Output() id: EventEmitter<any> = new EventEmitter();
   @Output() editBookmark: EventEmitter<any> = new EventEmitter();
-   isOptions: boolean = false;
+  isOptions: boolean = false;
 
   ngOnInit(): void {}
 
@@ -20,12 +20,12 @@ export class BookmarkPrevieewLiComponent implements OnInit {
   }
 
   delete() {
-    this.isOptions=!this.isOptions
-    if (this.bookmark?.id) this.id.emit(this.bookmark.id);
+    this.isOptions = !this.isOptions;
+    if (this.bookmark?._id) this.id.emit(this.bookmark._id);
   }
 
   edit() {
-    this.isOptions=!this.isOptions
+    this.isOptions = !this.isOptions;
     if (this.bookmark) this.editBookmark.emit(this.bookmark);
   }
 }

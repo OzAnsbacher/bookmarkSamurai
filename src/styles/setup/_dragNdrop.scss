@@ -12,6 +12,7 @@ li {
 .cdk-drag-placeholder {
   opacity: 0;
   cursor: grabbing !important;
+  background-color: aqua !important;
 }
 
 .cdk-drag-animating {
@@ -19,17 +20,18 @@ li {
 }
 
 html .draggable-cursor {
-	cursor: move !important; /* fallback: no `url()` support or images disabled */
-	cursor: -webkit-grabbing !important; /* Chrome 1-21, Safari 4+ */
-	cursor:    -moz-grabbing !important; /* Firefox 1.5-26 */
-	cursor:         grabbing !important; /* W3C standards syntax, should come least */
+  background-color: aqua;
+  cursor: move !important; /* fallback: no `url()` support or images disabled */
+  cursor: -webkit-grabbing !important; /* Chrome 1-21, Safari 4+ */
+  cursor: -moz-grabbing !important; /* Firefox 1.5-26 */
+  cursor: grabbing !important; /* W3C standards syntax, should come least */
 }
 
 .example-box:last-child {
   border: none;
 }
 .example-box:active {
- cursor: grabbing;
+  cursor: grabbing;
 }
 
 .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {

@@ -25,7 +25,11 @@ export class BarTitleComponent implements OnInit {
   }
 
   openTab() {
-    window.open('http://localhost:8080/', '_blank',
-    ' titlebar=no, resizable=no, status=no, location=no, menubar=no, width=400px, height=400px, top=50px, left=50px');
+    window.open('https://bookmark-samurai-new-tab.onrender.com', '_blank',
+    ' titlebar=no, resizable=no, status=no, location=no, menubar=no, width=500px, height=300px, top=50px, left=50px');
   }
+  // openTab() {
+  //   window.open('http://localhost:8080/', '_blank',
+  //   ' titlebar=no, resizable=no, status=no, location=no, menubar=no, width=500px, height=300px, top=50px, left=50px');
+  // }
 }

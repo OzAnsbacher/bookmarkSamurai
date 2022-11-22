@@ -1,17 +1,6 @@
-// import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-
-// @NgModule({
-//   declarations: [],
-//   imports: [CommonModule],
-// })
-// export class BookmarkModule {
-
-// }
 export interface BookmarkModule {
-  id: string;
+  _id: string;
   url: string;
   name: string;
   category: string;
-  icon?: string;
 }

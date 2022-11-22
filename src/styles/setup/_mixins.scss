@@ -6,21 +6,33 @@
 @mixin for-narrow-layout {
   @media (min-width: $break-narrow) {
     @content;
+    .video-container {
+      height: $break-narrow * 0.6;
+    }
   }
 }
 @mixin for-normal-layout {
   @media (min-width: $break-normal) {
     @content;
+    .video-container {
+      height: $break-normal * 0.57;
+    }
   }
 }
 @mixin for-wide-layout {
   @media (min-width: $break-wide) {
     @content;
+    .video-container {
+      height: $break-wide * 0.57;
+    }
   }
 }
 @mixin for-huge-layout {
   @media (min-width: $break-huge) {
     @content;
+    .video-container {
+      height: $break-huge * 0.57;
+    }
   }
 }
 
@@ -30,6 +42,7 @@
     minmax(auto, $max)
     minmax($layoutPadding, 1fr);
 }
+
 /* Media  Mixins */
 //aspect ratio mixin
 @mixin aspect-ratio($width: 1, $height: 1) {

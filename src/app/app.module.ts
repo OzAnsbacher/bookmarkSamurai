@@ -15,6 +15,7 @@ import { BarTitleComponent } from './cmps/bar-title/bar-title.component';
 import { FormsModule } from '@angular/forms';
 import { AddTabComponent } from './cmps/add-tab/add-tab.component';
 import { BookmarkPrevieewLiComponent } from './cmps/bookmark-previeew-li/bookmark-previeew-li.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { BookmarkPrevieewLiComponent } from './cmps/bookmark-previeew-li/bookmar
     AddTabComponent,
     BookmarkPrevieewLiComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, DragDropModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, DragDropModule],
   providers: [],
   bootstrap: [AppComponent],
 })
