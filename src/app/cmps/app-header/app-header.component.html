@@ -5,10 +5,15 @@
             <h1>bookmark samurai</h1>
         </a>
         <nav>
-            <img src="../../../assets/icon/giphy.gif" alt="">
-            <a class="btn-nav" routerLink="/bookmark">Model</a>
-            <a class="btn-nav" routerLink="/signup">Sign Up</a>
-            <a class="btn-nav" routerLink="/login">Login</a>
+            <div *ngIf="!isUser">
+
+                <img src="../../../assets/icon/giphy.gif" alt="">
+                <a class="btn-nav" routerLink="/bookmark">Model</a>
+                <a class="btn-nav" routerLink="/signup">Sign Up</a>
+                <a class="btn-nav" routerLink="/login">Login</a>
+            </div>
+            <button class="btn-nav" (click)="logout()" *ngIf="isUser">LogOut</button>
         </nav>
+
     </section>
 </header>

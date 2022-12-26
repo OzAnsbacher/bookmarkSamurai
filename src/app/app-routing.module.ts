@@ -16,6 +16,10 @@ const routes: Routes = [
     component: AppBookmarkComponent,
   },
   {
+    path: 'bookmark/:id/:name',
+    component: AppBookmarkComponent,
+  },
+  {
     path: 'signup',
     component: SignUpPageComponent,
   },

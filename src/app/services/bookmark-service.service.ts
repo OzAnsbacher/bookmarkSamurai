@@ -13,18 +13,38 @@ import { HttpService } from './http.service.service';
 export class BookmarkService {
   constructor(private http: HttpClient, private httpService: HttpService) {}
 
-  //creat new BehaviorSubject
   private _categories$ = new BehaviorSubject<CategoriesModule>({});
-  //build public variable asObservable to get emitted values on subscription
   public categories$ = this._categories$.asObservable();
 
   private _filterBy$ = new BehaviorSubject<FilterByModule>({
     category: '',
     bookmark: '',
   });
+
   public filterBy$ = this._filterBy$.asObservable();
   bookmarkURL = 'bookmark';
-  public query() {
+  bookmarks!: BookmarkModule[];
+
+  public query(bookmarks: BookmarkModule[]) {
+    this.bookmarks = bookmarks;
+    const filterBy = this._filterBy$.getValue();
+    var bookmarkDB = this.serviceOrder(bookmarks);
+    this.passInPipes(filterBy, bookmarkDB);
+  }
+
+  public setFilterBy(filterBy: FilterByModule) {
+    this._filterBy$.next(filterBy);
+    this.query(this.bookmarks);
+  }
+
+  public remove(bookmarkId: string) {
+    // this.httpService.delete(this.bookmarkURL, bookmarkId).subscribe((res) => {
+    //    });
+    //FIX REMOVE
+    // this.query(this.bookmarks);
+  }
+
+  public getModel() {
     // get the last value on _filterBy$ BehaviorSubject
     const filterBy = this._filterBy$.getValue();
     var bookmarkDB = {};
@@ -34,18 +54,6 @@ export class BookmarkService {
         bookmarkDB = this.serviceOrder(db);
         this.passInPipes(filterBy, bookmarkDB);
       });
-  }
-
-  public setFilterBy(filterBy: FilterByModule) {
-    this._filterBy$.next(filterBy);
-    this.query();
-  }
-
-  public remove(bookmarkId: string) {
-    this.httpService.delete(this.bookmarkURL, bookmarkId).subscribe((res) => {
-      console.log(res);
-    });
-    this.query();
   }
 
   private passInPipes(filterBy: FilterByModule, bookmarkDB: CategoriesModule) {

@@ -12,9 +12,7 @@ header {
       position: absolute;
       height: 40px;
       width: 40px;
-
       transform: translatey(-24px) translateX(-21px) rotatez(114deg);
-     
     }
     a {
       text-decoration: none;
@@ -25,11 +23,16 @@ header {
         line-height: 0;
       }
     }
-
+    button{
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+    }
     .btn-nav {
       text-decoration: none;
       color: #546e7a;
       margin-left: 10px;
+    
     }
   }
 }
