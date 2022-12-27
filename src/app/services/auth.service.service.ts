@@ -24,7 +24,7 @@ export class AuthService {
     username: '',
     _id: '',
   });
-  //build public variable asObservable to get emitted values on subscription
+
   public userId$ = this._userId$.asObservable();
 
   signUp(user: UserModule) {
@@ -46,7 +46,6 @@ export class AuthService {
       this.userService.isUser$.next(false);
       this.userService.isUser$.subscribe((isuser) => {});
       this.router.navigate(['']);
-
       console.log(msg);
     });
   }

@@ -38,10 +38,9 @@ export class BookmarkService {
   }
 
   public remove(bookmarkId: string) {
-    // this.httpService.delete(this.bookmarkURL, bookmarkId).subscribe((res) => {
-    //    });
-    //FIX REMOVE
-    // this.query(this.bookmarks);
+    this.httpService.deleteBookmark(this.bookmarkURL, bookmarkId).subscribe(() => {
+      this.getModel();
+    });
   }
 
   public getModel() {

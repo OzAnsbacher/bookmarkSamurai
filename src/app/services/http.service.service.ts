@@ -15,8 +15,8 @@ import { CategoriesModule } from '../models/categories/categories.module';
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  // BASE_URL = '//localhost:3030/api/';
-  BASE_URL = '/api/';
+  BASE_URL = '//localhost:3030/api/';
+  // BASE_URL = '/api/';
 
   public get(endpoint: string, data: object | null) {
     return this.http
@@ -32,16 +32,22 @@ export class HttpService {
       .pipe(tap({ error: (error) => console.log(error) }));
   }
 
-  public delete(endpoint: string, id: string) {
+  public delete(endpoint: string, id: string): Observable<UserModule> {
     const url = this.BASE_URL + endpoint + '/' + id;
     return this.http
-      .delete(url)
+      .delete<UserModule>(url, { withCredentials: true })
+      .pipe(tap({ error: (error) => console.log(error) }));
+  }
+
+  public deleteBookmark(endpoint: string, id: string): Observable<string> {
+    const url = this.BASE_URL + endpoint + '/' + id;
+    return this.http
+      .delete<string>(url, { withCredentials: true })
       .pipe(tap({ error: (error) => console.log(error) }));
   }
 
   public post(endpoint: string, data: UserModule | UserLoginModule) {
     const url = this.BASE_URL + endpoint;
-    console.log('post', url, data);
     return this.http
       .post<UserLoginModule>(url, data, { withCredentials: true })
       .pipe(
@@ -73,7 +79,5 @@ export class HttpService {
         },
       })
     );
-
-    // return this.http.get<UserModule>(url, { withCredentials: true });
   }
 }

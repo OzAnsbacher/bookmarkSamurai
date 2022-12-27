@@ -20,10 +20,16 @@ export class UserService {
 
   get(id: string) {
     this.httpService.getById('user', id).subscribe((user: UserModule) => {
-      console.log(user.bookmarks);
-      this.isUser$.next(true)
+      this.isUser$.next(true);
       this.bookmarkService.query(user.bookmarks);
     });
+  }
+
+  remove(id: string) {
+    this.httpService.delete('user', id).subscribe((user: UserModule) => {
+            this.bookmarkService.query(user?.bookmarks);
+
+        });
   }
 
   getUser() {
