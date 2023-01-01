@@ -38,9 +38,13 @@ export class BookmarkService {
   }
 
   public remove(bookmarkId: string) {
-    this.httpService.deleteBookmark(this.bookmarkURL, bookmarkId).subscribe(() => {
-      this.getModel();
-    });
+    this.httpService
+      .deleteBookmark(this.bookmarkURL, bookmarkId)
+      .subscribe((res) => {
+        console.log(res);
+
+        this.getModel();
+      });
   }
 
   public getModel() {
@@ -50,6 +54,7 @@ export class BookmarkService {
     this.httpService
       .get(this.bookmarkURL, {})
       .subscribe((db: BookmarkModule[]) => {
+        this.bookmarks = db;
         bookmarkDB = this.serviceOrder(db);
         this.passInPipes(filterBy, bookmarkDB);
       });

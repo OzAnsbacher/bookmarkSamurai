@@ -38,10 +38,14 @@ export class SignUpPageComponent implements OnInit {
         password: this.profileForm.value.password,
         bookmarks: [],
       };
-      this.authService.signUp(user);
-      this.authService.userId$.subscribe(({ _id }) => {
-        this.router.navigate(['/bookmark/' + _id]);
-      });
+      this.authService.signUp(user).subscribe(user=>{
+        if (user._id && user.username) {
+         this.router.navigate(['/bookmark/' , user._id , user.username]);
+       }
+   })
+      // this.authService.userId$.subscribe(({ _id }) => {
+      //   this.router.navigate(['/bookmark/' + _id]);
+      // });
     }
   }
   conPassword() {

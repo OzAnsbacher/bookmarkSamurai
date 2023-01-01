@@ -2,6 +2,7 @@ import { BookmarkService } from './../../services/bookmark-service.service';
 import { FilterByModule } from './../../models/filter-by/filter-by.module';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { isDevMode } from '@angular/core';
 
 @Component({
   selector: 'bar-title',
@@ -25,8 +26,18 @@ export class BarTitleComponent implements OnInit {
   }
 
   openTab() {
-    window.open('https://bookmark-samurai-new-tab.onrender.com', '_blank',
-    ' titlebar=no, resizable=no, status=no, location=no, menubar=no, width=500px, height=300px, top=50px, left=50px');
+    if (isDevMode()) {
+      window.open(
+        'http://localhost:8080/',
+        '_blank',
+        ' titlebar=no, resizable=no, status=no, location=no, menubar=no, width=500px, height=300px, top=50px, left=50px'
+      );
+    } else {
+      window.open(
+        'https://bookmark-samurai-new-tab.onrender.com',
+        '_blank',
+        ' titlebar=no, resizable=no, status=no, location=no, menubar=no, width=500px, height=300px, top=50px, left=50px'
+      );
+    }
   }
- 
 }

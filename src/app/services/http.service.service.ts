@@ -8,15 +8,21 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BookmarkModule } from '../models/bookmark/bookmark.module';
 import { CategoriesModule } from '../models/categories/categories.module';
+import { isDevMode } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HttpService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    if (isDevMode()) {
+      this.BASE_URL = '//localhost:3030/api/';
+    } else {
+      this.BASE_URL = '/api/';
+    }
+  }
 
-  BASE_URL = '//localhost:3030/api/';
-  // BASE_URL = '/api/';
+  BASE_URL;
 
   public get(endpoint: string, data: object | null) {
     return this.http
@@ -39,10 +45,10 @@ export class HttpService {
       .pipe(tap({ error: (error) => console.log(error) }));
   }
 
-  public deleteBookmark(endpoint: string, id: string): Observable<string> {
+  public deleteBookmark(endpoint: string, id: string): Observable<object> {
     const url = this.BASE_URL + endpoint + '/' + id;
     return this.http
-      .delete<string>(url, { withCredentials: true })
+      .delete<object>(url, { withCredentials: true })
       .pipe(tap({ error: (error) => console.log(error) }));
   }
 

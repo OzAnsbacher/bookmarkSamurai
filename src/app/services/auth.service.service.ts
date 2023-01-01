@@ -28,13 +28,12 @@ export class AuthService {
   public userId$ = this._userId$.asObservable();
 
   signUp(user: UserModule) {
-    this.httpService
-      .post('auth/signup', user)
-      .subscribe((user: UserLoginModule) => {
-        if (user) {
-          this._userId$.next(user);
-        }
-      });
+    return this.httpService.post('auth/signup', user);
+    // .subscribe((user: UserLoginModule) => {
+    //   if (user) {
+    //     this._userId$.next(user);
+    //   }
+    // });
   }
 
   login(user: UserLoginModule) {
